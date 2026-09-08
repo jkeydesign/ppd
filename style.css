@@ -229,12 +229,15 @@ body {
   padding: 2px 8px;
   border-radius: 4px;
   color: #ffffff;
+  background-color: #64748b;
   letter-spacing: 0.5px;
 }
 
-.group-a .group-badge { background-color: #3b82f6; }
-.group-c .group-badge { background-color: #8b5cf6; }
-.group-b .group-badge { background-color: #ec4899; }
+.group-a .group-badge,
+.group-b .group-badge,
+.group-c .group-badge {
+  background-color: #64748b;
+}
 
 .group-buttons {
   display: grid;
