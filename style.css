@@ -204,7 +204,7 @@ body {
   font-weight: 500;
 }
 
-/* Group Box Layout (A, C, B) */
+/* Group Box Layout themed per color section */
 .group-container {
   display: flex;
   flex-direction: column;
@@ -229,14 +229,34 @@ body {
   padding: 2px 8px;
   border-radius: 4px;
   color: #ffffff;
-  background-color: #64748b;
   letter-spacing: 0.5px;
 }
 
-.group-a .group-badge,
-.group-b .group-badge,
-.group-c .group-badge {
-  background-color: #64748b;
+/* Blue Section Group Box & Badge Styling */
+.blue-section .group-box {
+  border: 1.5px solid rgba(0, 174, 239, 0.4);
+}
+.blue-section .group-badge {
+  background-color: var(--color-blue);
+  color: #ffffff;
+}
+
+/* Red Section Group Box & Badge Styling */
+.red-section .group-box {
+  border: 1.5px solid rgba(236, 0, 140, 0.4);
+}
+.red-section .group-badge {
+  background-color: var(--color-red);
+  color: #ffffff;
+}
+
+/* Yellow Section Group Box & Badge Styling */
+.yellow-section .group-box {
+  border: 1.5px solid rgba(247, 181, 0, 0.5);
+}
+.yellow-section .group-badge {
+  background-color: var(--color-yellow);
+  color: #ffffff;
 }
 
 .group-buttons {
