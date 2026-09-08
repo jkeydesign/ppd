@@ -1,0 +1,19 @@
+{
+  "name": "interpersonal-design-diagram",
+  "version": "1.0.0",
+  "description": "Interpersonal Design Diagram - 개인 선호도 도표 브랜드 로고 생성기",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "brand-logo",
+    "canvas",
+    "interpersonal-design-diagram",
+    "ppd-app",
+    "logo-generator"
+  ],
+  "author": "Kang Eun Young",
+  "license": "MIT"
+}

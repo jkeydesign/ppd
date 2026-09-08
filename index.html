@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interpersonal Design Diagram - 브랜드 로고 생성기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo-title">
+        <span class="badge">PPD System</span>
+        <h1>Interpersonal Design Diagram</h1>
+        <p class="subtitle">나만의 선호도 수치와 규칙으로 완성하는 시그니처 브랜드 로고</p>
+      </div>
+      <div class="header-actions">
+        <button id="btnSurveyGuide" class="btn-secondary">📋 번호별 항목 안내</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <!-- 좌측: 조작 및 설정 패널 -->
+      <section class="control-panel">
+        
+        <!-- 영문 이름 입력 -->
+        <div class="panel-card">
+          <h2>1. 영문 이름 입력</h2>
+          <div class="form-group">
+            <label for="inputName">로고 곡선 영문 이름 (English Name)</label>
+            <input type="text" id="inputName" placeholder="예: KANG EUN YOUNG" value="KANG EUN YOUNG" maxlength="32">
+            <small>원형 상단 곡선을 따라 아치형으로 배치됩니다.</small>
+          </div>
+          <div class="form-group">
+            <label for="inputSubtext">하단 서브 텍스트 (선택사항)</label>
+            <input type="text" id="inputSubtext" placeholder="예: Design by" value="Design by" maxlength="30">
+          </div>
+        </div>
+
+        <!-- 3가지 색상선 번호 규칙 선택 -->
+        <div class="panel-card">
+          <h2>2. 규칙별 번호 선택 & 순서 (최소 2개 이상 선택)</h2>
+          <div class="rule-banner">
+            <strong>📌 작성 방법 및 핵심 시스템 규칙 (모든 색상 공통 적용):</strong>
+            <ol>
+              <li>자신에게 해당하는 항목의 번호를 <strong>순서대로 최소 2개 이상</strong> 선택합니다.</li>
+              <li><strong>ⓐ A ≠ B (1:1 상반 제외 규칙)</strong>: <code>1번 ↔ 6번</code>, <code>2번 ↔ 7번</code>, <code>3번 ↔ 8번</code>은 서로 1:1 상반되므로 동시 선택에서 제외됩니다. (예: 1번 선택 시 상반되는 6번만 자동 제한되며, 2,3,7,8번은 자유롭게 선택 가능)</li>
+              <li><strong>ⓑ C ⊂ A or B (종속 규칙)</strong>: <code>4~5번(C그룹)</code>은 반드시 A그룹(1~3번) 또는 B그룹(6~8번) 항목과 함께 선택되어야 선이 구성됩니다.</li>
+              <li>이미 누른 번호를 다시 누르면 <strong>선택 해제</strong>됩니다.</li>
+            </ol>
+          </div>
+          
+          <!-- 파란색 (외모) -->
+          <div class="color-section blue-section">
+            <div class="color-header">
+              <span class="color-dot blue-dot"></span>
+              <div class="color-info">
+                <span class="color-name">파란색 (Cyan Blue) - 외모</span>
+                <span class="thickness-tag">제일 두꺼운 선 (14px)</span>
+              </div>
+            </div>
+            
+            <div class="group-container" data-color="blue">
+              <div class="group-box group-a">
+                <span class="group-badge">A 그룹</span>
+                <div class="group-buttons">
+                  <button type="button" class="num-btn" data-num="1" title="1번 외모: 여성스럽다"><span class="n-num">1</span><span class="n-label">여성스럽다</span></button>
+                  <button type="button" class="num-btn" data-num="2" title="2번 외모: 귀엽다"><span class="n-num">2</span><span class="n-label">귀엽다</span></button>
+                  <button type="button" class="num-btn" data-num="3" title="3번 외모: 소박하다"><span class="n-num">3</span><span class="n-label">소박하다</span></button>
+                </div>
+              </div>
+              <div class="group-box group-c">
+                <span class="group-badge">C 그룹</span>
+                <div class="group-buttons">
+                  <button type="button" class="num-btn" data-num="4" title="4번 외모: 피부가 좋다"><span class="n-num">4</span><span class="n-label">피부가 좋다</span></button>
+                  <button type="button" class="num-btn" data-num="5" title="5번 외모: 목소리가 좋다"><span class="n-num">5</span><span class="n-label">목소리가 좋다</span></button>
+                </div>
+              </div>
+              <div class="group-box group-b">
+                <span class="group-badge">B 그룹</span>
+                <div class="group-buttons">
+                  <button type="button" class="num-btn" data-num="6" title="6번 외모: 남성스럽다"><span class="n-num">6</span><span class="n-label">남성스럽다</span></button>
+                  <button type="button" class="num-btn" data-num="7" title="7번 외모: 섹시하다"><span class="n-num">7</span><span class="n-label">섹시하다</span></button>
+                  <button type="button" class="num-btn" data-num="8" title="8번 외모: 화려하다"><span class="n-num">8</span><span class="n-label">화려하다</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="sequence-display">
+              <span class="seq-label">선택 순서:</span>
+              <span id="blueSequence" class="seq-list">선택 없음</span>
+              <button type="button" class="btn-clear" data-color="blue">초기화</button>
+            </div>
+          </div>
+
+          <!-- 빨간색 (성격) -->
+          <div class="color-section red-section">
+            <div class="color-header">
+              <span class="color-dot red-dot"></span>
+              <div class="color-info">
+                <span class="color-name">빨간색 (Magenta Red) - 성격</span>
+                <span class="thickness-tag">중간 두께 선 (8px)</span>
+              </div>
+            </div>
+
+            <div class="group-container" data-color="red">
+              <div class="group-box group-a">
+                <span class="group-badge">A 그룹</span>
+                <div class="group-buttons">
+                  <button type="button" class="num-btn" data-num="1" title="1번 성격: 활발하다"><span class="n-num">1</span><span class="n-label">활발하다</span></button>
+                  <button type="button" class="num-btn" data-num="2" title="2번 성격: 재미있다"><span class="n-num">2</span><span class="n-label">재미있다</span></button>
+                  <button type="button" class="num-btn" data-num="3" title="3번 성격: 친절하다"><span class="n-num">3</span><span class="n-label">친절하다</span></button>
+                </div>
+              </div>
+              <div class="group-box group-c">
+                <span class="group-badge">C 그룹</span>
+                <div class="group-buttons">
+                  <button type="button" class="num-btn" data-num="4" title="4번 성격: 지적이다"><span class="n-num">4</span><span class="n-label">지적이다</span></button>
+                  <button type="button" class="num-btn" data-num="5" title="5번 성격: 솔직하다"><span class="n-num">5</span><span class="n-label">솔직하다</span></button>
+                </div>
+              </div>
+              <div class="group-box group-b">
+                <span class="group-badge">B 그룹</span>
+                <div class="group-buttons">
+                  <button type="button" class="num-btn" data-num="6" title="6번 성격: 얌전하다"><span class="n-num">6</span><span class="n-label">얌전하다</span></button>
+                  <button type="button" class="num-btn" data-num="7" title="7번 성격: 과묵하다"><span class="n-num">7</span><span class="n-label">과묵하다</span></button>
+                  <button type="button" class="num-btn" data-num="8" title="8번 성격: 까칠하다"><span class="n-num">8</span><span class="n-label">까칠하다</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="sequence-display">
+              <span class="seq-label">선택 순서:</span>
+              <span id="redSequence" class="seq-list">선택 없음</span>
+              <button type="button" class="btn-clear" data-color="red">초기화</button>
+            </div>
+          </div>
+
+          <!-- 노란색 (취미) -->
+          <div class="color-section yellow-section">
+            <div class="color-header">
+              <span class="color-dot yellow-dot"></span>
+              <div class="color-info">
+                <span class="color-name">노란색 (Yellow) - 취미/특기</span>
+                <span class="thickness-tag">가장 가는 선 (4px)</span>
+              </div>
+            </div>
+
+            <div class="group-container" data-color="yellow">
+              <div class="group-box group-a">
+                <span class="group-badge">A 그룹</span>
+                <div class="group-buttons">
+                  <button type="button" class="num-btn" data-num="1" title="1번 취미: 독서·미술"><span class="n-num">1</span><span class="n-label">독서·미술</span></button>
+                  <button type="button" class="num-btn" data-num="2" title="2번 취미: 음악·영화"><span class="n-num">2</span><span class="n-label">음악·영화</span></button>
+                  <button type="button" class="num-btn" data-num="3" title="3번 취미: 외국어"><span class="n-num">3</span><span class="n-label">외국어</span></button>
+                </div>
+              </div>
+              <div class="group-box group-c">
+                <span class="group-badge">C 그룹</span>
+                <div class="group-buttons">
+                  <button type="button" class="num-btn" data-num="4" title="4번 취미: 종교"><span class="n-num">4</span><span class="n-label">종교</span></button>
+                  <button type="button" class="num-btn" data-num="5" title="5번 취미: 요리"><span class="n-num">5</span><span class="n-label">요리</span></button>
+                </div>
+              </div>
+              <div class="group-box group-b">
+                <span class="group-badge">B 그룹</span>
+                <div class="group-buttons">
+                  <button type="button" class="num-btn" data-num="6" title="6번 취미: 운동·댄스"><span class="n-num">6</span><span class="n-label">운동·댄스</span></button>
+                  <button type="button" class="num-btn" data-num="7" title="7번 취미: 쇼핑"><span class="n-num">7</span><span class="n-label">쇼핑</span></button>
+                  <button type="button" class="num-btn" data-num="8" title="8번 취미: 게임"><span class="n-num">8</span><span class="n-label">게임</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="sequence-display">
+              <span class="seq-label">선택 순서:</span>
+              <span id="yellowSequence" class="seq-list">선택 없음</span>
+              <button type="button" class="btn-clear" data-color="yellow">초기화</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 예시 프리셋 추천 -->
+        <div class="panel-card">
+          <h2>3. 추천 스타일 프리셋</h2>
+          <div class="preset-buttons">
+            <button type="button" class="preset-btn" data-preset="preset1">샘플 1 (LEE SANG GYU)</button>
+            <button type="button" class="preset-btn" data-preset="preset2">샘플 2 (KIM YOUNG SANG)</button>
+            <button type="button" class="preset-btn" data-preset="preset3">샘플 3 (KANG DOO SOO)</button>
+            <button type="button" class="preset-btn" data-preset="preset4">샘플 4 (SEO HYUN YOUNG)</button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 우측: 캔버스 실시간 프리뷰 영역 -->
+      <section class="preview-panel">
+        <div class="canvas-card">
+          <div class="canvas-header">
+            <h2>실시간 브랜드 로고 프리뷰</h2>
+            <div class="canvas-options">
+              <label class="toggle-label">
+                <input type="checkbox" id="chkShowGuideNodes" checked>
+                <span>그리드 번호 가이드 보기</span>
+              </label>
+              <label class="toggle-label">
+                <input type="checkbox" id="chkShowOuterCircle" checked>
+                <span>원형 테두리 보기</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="canvas-container">
+            <canvas id="logoCanvas" width="1000" height="1000"></canvas>
+            <div id="nodeHoverTooltip" class="node-hover-tooltip hidden"></div>
+          </div>
+
+          <div class="export-actions">
+            <button id="btnDownloadJpeg" class="btn-primary btn-large">
+              💾 고화질 JPEG 다운로드
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 항목 가이드 모달 -->
+    <div id="surveyModal" class="modal-overlay hidden">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>📋 9가지 구성 스타일 항목 번호 안내</h3>
+          <button id="btnCloseModal" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="survey-grid">
+            <div class="survey-col blue-col">
+              <h4>🟦 파란색 (외모)</h4>
+              <ul>
+                <li><span class="num-badge">1</span> 여성스럽다</li>
+                <li><span class="num-badge">2</span> 귀엽다</li>
+                <li><span class="num-badge">3</span> 소박하다</li>
+                <li><span class="num-badge">4</span> 피부가 좋다</li>
+                <li><span class="num-badge">5</span> 목소리가 좋다</li>
+                <li><span class="num-badge">6</span> 남성스럽다</li>
+                <li><span class="num-badge">7</span> 섹시하다</li>
+                <li><span class="num-badge">8</span> 화려하다</li>
+              </ul>
+            </div>
+            <div class="survey-col red-col">
+              <h4>🟥 빨간색 (성격)</h4>
+              <ul>
+                <li><span class="num-badge">1</span> 활발하다</li>
+                <li><span class="num-badge">2</span> 재미있다</li>
+                <li><span class="num-badge">3</span> 친절하다</li>
+                <li><span class="num-badge">4</span> 지적이다</li>
+                <li><span class="num-badge">5</span> 솔직하다</li>
+                <li><span class="num-badge">6</span> 얌전하다</li>
+                <li><span class="num-badge">7</span> 과묵하다</li>
+                <li><span class="num-badge">8</span> 까칠하다</li>
+              </ul>
+            </div>
+            <div class="survey-col yellow-col">
+              <h4>🟨 노란색 (취미 / 특기)</h4>
+              <ul>
+                <li><span class="num-badge">1</span> 독서 / 미술</li>
+                <li><span class="num-badge">2</span> 음악 / 영화</li>
+                <li><span class="num-badge">3</span> 외국어</li>
+                <li><span class="num-badge">4</span> 종교</li>
+                <li><span class="num-badge">5</span> 요리</li>
+                <li><span class="num-badge">6</span> 운동 / 댄스</li>
+                <li><span class="num-badge">7</span> 쇼핑</li>
+                <li><span class="num-badge">8</span> 게임</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
