@@ -204,20 +204,19 @@ body {
   font-weight: 500;
 }
 
-/* Group Box Layout themed per color section */
+/* Grayscale Step Layout for A, B, C Groups */
 .group-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 14px;
+  gap: 14px;
+  margin-bottom: 16px;
 }
 
 .group-box {
   position: relative;
-  border: 1.5px solid #cbd5e1;
   border-radius: 10px;
   padding: 14px 10px 10px 10px;
-  background-color: #ffffff;
+  transition: all 0.2s ease;
 }
 
 .group-badge {
@@ -226,36 +225,40 @@ body {
   left: 12px;
   font-size: 0.72rem;
   font-weight: 800;
-  padding: 2px 8px;
+  padding: 2px 9px;
   border-radius: 4px;
   color: #ffffff;
   letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-/* Blue Section Group Box & Badge Styling */
-.blue-section .group-box {
-  border: 1.5px solid rgba(0, 174, 239, 0.4);
+/* Group A: Step 1 (Dark Slate Gray Badge & Border) */
+.group-a {
+  border: 1.5px solid #94a3b8;
+  background-color: #ffffff;
 }
-.blue-section .group-badge {
-  background-color: var(--color-blue);
+.group-a .group-badge {
+  background-color: #1e293b;
   color: #ffffff;
 }
 
-/* Red Section Group Box & Badge Styling */
-.red-section .group-box {
-  border: 1.5px solid rgba(236, 0, 140, 0.4);
+/* Group B: Step 2 (Medium Gray Badge & Border) */
+.group-b {
+  border: 1.5px solid #cbd5e1;
+  background-color: #f8fafc;
 }
-.red-section .group-badge {
-  background-color: var(--color-red);
+.group-b .group-badge {
+  background-color: #475569;
   color: #ffffff;
 }
 
-/* Yellow Section Group Box & Badge Styling */
-.yellow-section .group-box {
-  border: 1.5px solid rgba(247, 181, 0, 0.5);
+/* Group C: Step 3 (Muted Gray Badge & Border) */
+.group-c {
+  border: 1.5px solid #e2e8f0;
+  background-color: #f1f5f9;
 }
-.yellow-section .group-badge {
-  background-color: var(--color-yellow);
+.group-c .group-badge {
+  background-color: #64748b;
   color: #ffffff;
 }
 
